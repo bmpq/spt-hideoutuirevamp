@@ -34,7 +34,7 @@ namespace tarkin.huir
                 rect.anchorMax = new Vector2(0, 1);
                 rect.anchoredPosition = Vector2.zero;
                 rect.offsetMin = new Vector2(0, 30f);
-                rect.offsetMax = new Vector2(400, 0);
+                rect.offsetMax = new Vector2(360f, 0);
 
                 ____scrollView.vertical = true;
                 ____scrollView.horizontal = false;
@@ -46,9 +46,11 @@ namespace tarkin.huir
                 ____scrollView.viewport.offsetMin = new Vector2(0, 0);
                 ____scrollView.viewport.offsetMax = new Vector2(0, 0);
 
+                ____scrollView.content.pivot = new Vector2(0, 1);
                 Component.DestroyImmediate(____scrollView.content.GetComponent<HorizontalLayoutGroup>());
-                ____scrollView.content.gameObject.AddComponent<VerticalLayoutGroup>();
-                ____scrollView.content.pivot = new Vector2(0, 1); 
+                var vertical = ____scrollView.content.gameObject.AddComponent<VerticalLayoutGroup>();
+                vertical.spacing = 10;
+                vertical.padding = new RectOffset(10, 10, 10, 20);
             }
             catch (Exception e) { Logger.LogError(e); }
         }
