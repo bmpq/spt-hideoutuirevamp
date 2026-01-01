@@ -17,6 +17,7 @@ namespace tarkin.huir
             new Patch_AreaPanel_Init().Enable();
             new Patch_HideoutScreenRear_ShowAsync().Enable();
             new Patch_AreasPanel_DoScroll().Enable();
+            new Patch_AreaWorldPanel_Awake().Enable();
         }
     }
 }
