@@ -34,7 +34,7 @@ namespace tarkin.huir
                 rect.anchorMax = new Vector2(0, 1);
                 rect.anchoredPosition = Vector2.zero;
                 rect.offsetMin = new Vector2(0, 30f);
-                rect.offsetMax = new Vector2(360f, -86f);
+                rect.offsetMax = new Vector2(360f, -115f);
 
                 ____scrollView.vertical = true;
                 ____scrollView.horizontal = false;
