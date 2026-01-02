@@ -20,12 +20,14 @@ namespace tarkin.huir
         [PatchPostfix]
         private static void PatchPostfix(AreaScreenSubstrate __instance, 
             ref float ____maxHeight,
-            AreaPanel ____areaPanel)
+            AreaPanel ____areaPanel,
+            RectTransform ____currentStageContainer,
+            RectTransform ____nextStageContainer)
         {
             try
             {
                 __instance.RectTransform.anchoredPosition = new Vector2(__instance.RectTransform.anchoredPosition.x, 60f);
-                ____maxHeight = 850f;
+                ____maxHeight = 890f;
 
                 ____areaPanel.RectTransform.anchorMin = new Vector2(0, 0.5f);
                 ____areaPanel.RectTransform.anchorMax = new Vector2(0, 0.5f);
@@ -38,6 +40,9 @@ namespace tarkin.huir
                 __instance.RectTransform.Find("Border").SetSiblingIndex(1);
 
                 CreateSimpleFilledHexagon(____areaPanel.Container, 37f, Color.black);
+
+                ____currentStageContainer.GetComponent<VerticalLayoutGroup>().padding.top = 25;
+                ____nextStageContainer.GetComponent<VerticalLayoutGroup>().padding.top = 25;
             }
             catch (Exception e) { Logger.LogError(e); }
         }
