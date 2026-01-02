@@ -20,6 +20,7 @@ namespace tarkin.huir
             new Patch_AreaWorldPanel_Awake().Enable();
             new Patch_AreaScreenSubstrate_Awake().Enable();
             new Patch_HideoutScreenOverlay_Awake().Enable();
+            new Patch_ChangeLightPanel_Show().Enable();
         }
     }
 }

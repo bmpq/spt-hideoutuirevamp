@@ -4,6 +4,7 @@ using SPT.Reflection.Patching;
 using System;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace tarkin.huir
 {
@@ -44,6 +45,8 @@ namespace tarkin.huir
                     buttons[i].RectTransform.pivot = Vector2.zero;
 
                     buttons[i].RectTransform.anchoredPosition = new Vector2(startX + (spacing * i), startY);
+
+                    buttons[i].GetComponent<Image>().raycastPadding = new Vector4(20, 20, 20, 20);
                 }
             }
             catch (Exception e) { Logger.LogError(e); }
