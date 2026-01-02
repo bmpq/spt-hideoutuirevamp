@@ -9,7 +9,7 @@ namespace tarkin.huir
     [BepInPlugin("com.tarkin.huir", MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
     internal class Plugin : BaseUnityPlugin
     {
-        internal static ManualLogSource Log = new ManualLogSource(MyPluginInfo.PLUGIN_NAME);
+        public new ManualLogSource Logger => base.Logger;
 
         private void Start()
         {
@@ -18,6 +18,7 @@ namespace tarkin.huir
             new Patch_HideoutScreenRear_ShowAsync().Enable();
             new Patch_AreasPanel_DoScroll().Enable();
             new Patch_AreaWorldPanel_Awake().Enable();
+            new Patch_AreaScreenSubstrate_Awake().Enable();
         }
     }
 }
