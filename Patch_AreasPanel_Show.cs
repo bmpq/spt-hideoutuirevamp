@@ -70,8 +70,16 @@ namespace tarkin.huir
             GameObject tabObj = UnityEngine.Object.Instantiate(ModState.TabPrefab, container.transform);
             tabObj.name = isOperatableTab ? "Tab_Operatable" : "Tab_Passive";
 
-            tabObj.GetComponent<LocalizedText>().LocalizationKey = string.Empty;
-            tabObj.GetComponent<LocalizedText>().method_2(isOperatableTab ? "OPERATIONS" : "PASSIVE"); // override all labels with SetLabelText()
+            var localizedText = tabObj.GetComponent<LocalizedText>();
+            localizedText.LocalizationKey = string.Empty;
+            localizedText.method_2(isOperatableTab ? "OPERATIONS" : "PASSIVE"); // override all labels with SetLabelText()
+
+            Sprite tabIcon = CacheResourcesPopAbstractClass.Pop<Sprite>(isOperatableTab ? "characteristics/icons/Repair" : "characteristics/icons/ricochet");
+
+            tabObj.transform.Find("Normal/Icon").GetComponent<Image>().sprite = tabIcon;
+            Image iconImageSelected = tabObj.transform.Find("Selected/Icon").GetComponent<Image>();
+            iconImageSelected.sprite = tabIcon;
+            iconImageSelected.color = Color.black;
 
             Tab tab = tabObj.GetComponent<Tab>();
             ModState.CustomTabs.Add(tab);
