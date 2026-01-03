@@ -15,14 +15,14 @@ namespace tarkin.huir
         {
             new Patch_AreasPanel_Awake().Enable();
             new Patch_AreaPanel_Init().Enable();
-            new Patch_HideoutScreenRear_ShowAsync().Enable();
+            new Patch_AreasPanel_Show().Enable();
             new Patch_AreasPanel_DoScroll().Enable();
             new Patch_AreaWorldPanel_Awake().Enable();
             new Patch_AreaScreenSubstrate_Awake().Enable();
             new Patch_HideoutScreenOverlay_Awake().Enable();
             new Patch_ChangeLightPanel_Show().Enable();
             new Patch_CommonUI_Awake().Enable();
-            new Patch_AreasPanel_Show().Enable();
+            new Patch_HideoutScreenRear_ShowAsync().Enable();
         }
     }
 }

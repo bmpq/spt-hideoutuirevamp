@@ -16,7 +16,7 @@ namespace tarkin.huir
         }
 
         [PatchPrefix]
-        private static void PatchPrefix(AreasPanel __instance, AreaData[] areas)
+        private static void PatchPrefix(AreasPanel __instance)
         {
             if (__instance.transform.Find("ModTabContainer") == null)
             {

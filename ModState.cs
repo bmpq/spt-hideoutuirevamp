@@ -21,6 +21,9 @@ namespace tarkin.huir
             if (data == null) 
                 return false;
 
+            if (!data.DisplayInterface)
+                return false;
+
             return IsOperatable(data.Template) == CurrentShowOperatable;
         }
 

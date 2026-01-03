@@ -25,6 +25,7 @@ namespace tarkin.huir
         {
             try
             {
+                // world icons container
                 (____areaIconsContainer as RectTransform).offsetMin = new Vector2(360f, 0);
 
                 var logo = ____hideoutText.transform.parent?.Find("Image")?.GetComponent<LayoutElement>();
