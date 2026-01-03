@@ -27,7 +27,7 @@ namespace tarkin.huir
             return IsOperatable(data.Template) == CurrentShowOperatable;
         }
 
-        private static bool IsOperatable(AreaTemplate template)
+        public static bool IsOperatable(AreaTemplate template)
         {
             switch (template.Type)
             {
@@ -74,6 +74,20 @@ namespace tarkin.huir
 
                 default:
                     return true;
+            }
+        }
+
+        public static void SetActiveTab(bool wantOperatable)
+        {
+            CurrentShowOperatable = wantOperatable;
+
+            foreach (var tab in CustomTabs)
+            {
+                bool isOperatableTab = tab.gameObject.name == "Tab_Operatable";
+
+                tab.UpdateVisual(isOperatableTab == wantOperatable);
+                if (isOperatableTab == wantOperatable)
+                    tab.transform.SetAsLastSibling();
             }
         }
 
