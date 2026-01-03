@@ -23,6 +23,7 @@ namespace tarkin.huir
             new Patch_ChangeLightPanel_Show().Enable();
             new Patch_CommonUI_Awake().Enable();
             new Patch_HideoutScreenRear_ShowAsync().Enable();
+            new Patch_AreaIcon_Show().Enable();
         }
     }
 }

@@ -28,12 +28,7 @@ namespace tarkin.huir
                 // world icons container
                 (____areaIconsContainer as RectTransform).offsetMin = new Vector2(360f, 0);
 
-                var logo = ____hideoutText.transform.parent?.Find("Image")?.GetComponent<LayoutElement>();
-                if (logo != null)
-                {
-                    logo.preferredWidth = 43.15f;
-                    logo.preferredHeight = 50f;
-                }
+                ____hideoutText.transform.parent.gameObject.SetActive(false);
 
             }
             catch (Exception e) { Logger.LogError(e); }

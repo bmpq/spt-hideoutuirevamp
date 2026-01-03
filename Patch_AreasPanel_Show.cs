@@ -44,9 +44,8 @@ namespace tarkin.huir
             rt.anchorMin = new Vector2(0, 1);
             rt.anchorMax = new Vector2(1, 1);
             rt.pivot = new Vector2(0.5f, 0);
-            rt.anchoredPosition = new Vector2(0, 0);
-            rt.offsetMin = new Vector2(0, 0);
-            rt.offsetMax = new Vector2(0, 32);
+            rt.offsetMin = new Vector2(0, 9);
+            rt.offsetMax = new Vector2(0, 41);
 
             HorizontalLayoutGroup layout = container.AddComponent<HorizontalLayoutGroup>();
             layout.spacing = -25f;
