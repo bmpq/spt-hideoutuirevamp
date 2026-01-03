@@ -55,13 +55,18 @@ namespace tarkin.huir
             layout.childForceExpandWidth = true;
             layout.childForceExpandHeight = false;
 
-            CreateTab(container, panel, true);
+            var initActivetab = CreateTab(container, panel, true);
             CreateTab(container, panel, false);
 
+            LayoutRebuilder.ForceRebuildLayoutImmediate(rt);
+            Component.DestroyImmediate(layout);
+
             container.SetActive(true);
+
+            UpdateTabVisuals(initActivetab);
         }
 
-        private static void CreateTab(GameObject container, AreasPanel panel, bool isOperatableTab)
+        private static Tab CreateTab(GameObject container, AreasPanel panel, bool isOperatableTab)
         {
             GameObject tabObj = UnityEngine.Object.Instantiate(ModState.TabPrefab, container.transform);
             tabObj.name = isOperatableTab ? "Tab_Operatable" : "Tab_Passive";
@@ -89,6 +94,8 @@ namespace tarkin.huir
                 tab.UpdateVisual(false);
 
             tabObj.SetActive(true);
+
+            return tab;
         }
 
         private static void UpdateTabVisuals(Tab selectedTab)
