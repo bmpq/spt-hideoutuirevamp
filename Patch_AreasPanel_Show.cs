@@ -62,7 +62,7 @@ namespace tarkin.huir
 
             container.SetActive(true);
 
-            UpdateTabVisuals(initActivetab);
+            ModState.SetActiveTab(true);
         }
 
         private static Tab CreateTab(GameObject container, AreasPanel panel, bool isOperatableTab)
@@ -80,9 +80,7 @@ namespace tarkin.huir
             {
                 if (selected)
                 {
-                    ModState.CurrentShowOperatable = isOperatableTab;
-                    UpdateTabVisuals(tab);
-
+                    ModState.SetActiveTab(isOperatableTab);
                     ModState.RefreshVisibility(panel);
                 }
             };
@@ -95,16 +93,6 @@ namespace tarkin.huir
             tabObj.SetActive(true);
 
             return tab;
-        }
-
-        private static void UpdateTabVisuals(Tab selectedTab)
-        {
-            foreach (var tab in ModState.CustomTabs)
-            {
-                tab.UpdateVisual(tab == selectedTab);
-                if (tab == selectedTab)
-                    tab.transform.SetAsLastSibling();
-            }
         }
     }
 }
