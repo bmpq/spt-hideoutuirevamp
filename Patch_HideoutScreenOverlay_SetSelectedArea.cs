@@ -23,6 +23,9 @@ namespace tarkin.huir
         {
             try
             {
+                if (area?.Template == null)
+                    return;
+
                 bool requiredTabState = ModState.IsOperatable(area.Template);
                 if (ModState.CurrentShowOperatable != requiredTabState)
                 {
